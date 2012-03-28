@@ -1,6 +1,7 @@
 (ns land-of-lisp.test.core
-  (:use [land-of-lisp.core])
-  (:use [clojure.test]))
+  (:require [land-of-lisp.core :as lol])
+  (:use [expectations]))
 
-(deftest replace-me ;; FIXME: write
-  (is false "No tests have been written."))
+(expect nil? nil)
+(expect 22 (lol/ash 11 1))
+(expect 5 (lol/ash 11 -1))
