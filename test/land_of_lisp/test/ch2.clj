@@ -2,9 +2,13 @@
   (:use [ch2])
   (:use [expectations]))
 
-;Force a reload because mutable global state screws up autoexpect. duh
-(use 'ch2 :reload)
+; Force start-over because global state screws up expectations
+(expect 50 (start-over))
 (expect 50 (guess-my-number))
+(expect 75 (bigger))
+(expect 62 (smaller))
+(expect 56 (smaller))
+(expect 50 (start-over))
 (expect 75 (bigger))
 (expect 62 (smaller))
 (expect 56 (smaller))

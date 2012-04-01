@@ -17,3 +17,10 @@
   []
   (reset! *big* ((fn [] (- (guess-my-number) 1))))
   (guess-my-number))
+
+(defn start-over
+  []
+  (reset! *big* 100)
+  (reset! *small* 1)
+  (guess-my-number))
+
